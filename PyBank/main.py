@@ -12,9 +12,9 @@ with open(path, 'r') as csvfile:
     profit = []
     profit_losses = []
     previous_value = first_row[1]
-    
 
     for row in csvreader: 
+        
         month.append(row[0])
         profit.append(int(row[1]))
         
@@ -22,22 +22,20 @@ with open(path, 'r') as csvfile:
 
         previous_value = row[1]
 
-    averageChange = sum(profit) / int(len(month))  
+    averageChange = sum(profit_losses) / int(len(month))  
 
     print("Financial Analysis")
     print("----------------------------------------------------")
-    print(f"Total Months: {len(month)}")
-    print(f"Total: $ {sum(profit)}")
+    print(f"Total Months: {len(month)+1}")
+    print(f"Total: $ {sum(profit)+ int(first_row[1])}")
     print(f"Average Change: $ {(averageChange)}")
-    print(profit_losses)
+    print(f"Greatest Increase in Profits: {max(profit_losses)}")
+    print(f"Greatest Decrease in Profits: {min(profit_losses)}")
 
-    
-    
-    
-    
-    #print(f"Greatest Increase in Profits:  {str(greatIncreaseMonth) + {str(greatIncreaseAmount)})
-    #print( \n"Greatest Decrease in Profits: " + {str(greatDecreaseMonth)} + {str(greatDecreaseAmount)})
+    #print(row[max(profit)])
 
-
-    
+with open('mainFinal.txt', 'w') as csvfile:
+    csvwriter = csv.writer(csvfile, delimiter=',')
+    csvwriter.writerow(['Date','Profit/Losses'])
+    #csvwriter.writerows(month[],profit_losses[])
 
