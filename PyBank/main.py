@@ -37,5 +37,5 @@ with open(path, 'r') as csvfile:
 with open('mainFinal.txt', 'w') as csvfile:
     csvwriter = csv.writer(csvfile, delimiter=',')
     csvwriter.writerow(['Date','Profit/Losses'])
-    #csvwriter.writerows(month[],profit_losses[])
+    csvwriter.writerows(row)
 
