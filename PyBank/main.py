@@ -34,8 +34,14 @@ with open(path, 'r') as csvfile:
 
     #print(row[max(profit)])
 
-with open('mainFinal.txt', 'w') as csvfile:
-    csvwriter = csv.writer(csvfile, delimiter=',')
-    csvwriter.writerow(['Date','Profit/Losses'])
-    csvwriter.writerows(row)
+with open('mainFinal.txt', 'w') as txtfile:
+    final_results = (
+    f"\nFinancial Analysis\n"    
+    f"----------------------------------------------------\n"
+    f"Total Months: {len(month)+1}\n"
+    f"Total: $ {sum(profit)+ int(first_row[1])}\n"
+    f"Average Change: $ {(averageChange)}\n"
+    f"Greatest Increase in Profits: {max(profit_losses)\n}"
+    f"Greatest Decrease in Profits: {min(profit_losses)}\n)
+    txtfile.write(final_results)
 

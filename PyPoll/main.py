@@ -25,7 +25,7 @@ with open(path,'r') as csvfile:
 
     
     
-    k_percent= round(k/int(total)*100,2)
+    k_percent= round(k/int(total)*100,2)   
     c_percent= round(c/int(total)*100,2) 
     l_percent= round(l/int(total)*100,2) 
     o_percent= round(o/int(total)*100,2) 
@@ -43,9 +43,11 @@ print("----------------------------------------------------")
 print("Winner: ")
 print("----------------------------------------------------")
 
-with open('mainEnd.txt', 'w') as csvfile:
-    csvwriter = csv.writer(csvfile, delimiter=',')
-    csvwriter.writerow("Election Results")
-    csvwriter.writerow("----------------------------------------------------")
-    csvwriter.writerow(f"Total Votes: {total}")
-    csvwriter.writerow("----------------------------------------------------")
+with open('mainEnd.txt', 'w') as txtfile:
+    election_results = (
+    f"\nElection Results\n"
+    f"----------------------------------------------------\n"
+    f"Total Votes: {total}"
+    f"\n----------------------------------------------------\n")
+    txtfile.write(election_results)
+
