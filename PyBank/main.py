@@ -28,11 +28,6 @@ with open(path, 'r') as csvfile:
 
     max_month = month[max_profit]
     min_month = month[min_profit]
-    
-    print(max_month)
-    print(min_month)
-
-    
 
     print("Financial Analysis")
     print("----------------------------------------------------")
@@ -41,8 +36,6 @@ with open(path, 'r') as csvfile:
     print(f"Average Change: $ {(averageChange)}")
     print(f"Greatest Increase in Profits: {max_month} $({max(profit_losses)})")
     print(f"Greatest Decrease in Profits: {min_month} $({min(profit_losses)})")
-    
-    #print(CSVasList.index(max(profit_losses)))
     
 
 with open('mainFinal.txt', 'w') as txtfile:
