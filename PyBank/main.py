@@ -7,7 +7,6 @@ with open(path, 'r') as csvfile:
     
     headers = next(csvreader)
     first_row = next(csvreader)
-
     month = []
     profit = []
     profit_losses = []
@@ -29,9 +28,10 @@ with open(path, 'r') as csvfile:
     print(f"Total Months: {len(month)+1}")
     print(f"Total: $ {sum(profit)+ int(first_row[1])}")
     print(f"Average Change: $ {(averageChange)}")
-    print(f"Greatest Increase in Profits: {max(profit_losses)}")
-    print(f"Greatest Decrease in Profits: {min(profit_losses)}")
-
+    print(f"Greatest Increase in Profits: $({max(profit_losses)})")
+    print(f"Greatest Decrease in Profits: $({min(profit_losses)})")
+    
+    #print(CSVasList.index(max(profit_losses)))
     #print(row[max(profit)])
 
 with open('mainFinal.txt', 'w') as txtfile:
@@ -41,7 +41,7 @@ with open('mainFinal.txt', 'w') as txtfile:
     f"Total Months: {len(month)+1}\n"
     f"Total: $ {sum(profit)+ int(first_row[1])}\n"
     f"Average Change: $ {(averageChange)}\n"
-    f"Greatest Increase in Profits: {max(profit_losses)\n}"
-    f"Greatest Decrease in Profits: {min(profit_losses)}\n)
+    f"Greatest Increase in Profits: $({max(profit_losses)})\n"
+    f"Greatest Decrease in Profits: $({min(profit_losses)})\n")
     txtfile.write(final_results)
 
