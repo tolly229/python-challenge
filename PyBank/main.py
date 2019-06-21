@@ -23,6 +23,15 @@ with open(path, 'r') as csvfile:
 
     averageChange = sum(profit_losses) / int(len(month))  
 
+    max_profit = profit_losses.index(max(profit_losses))
+    min_profit = profit_losses.index(min(profit_losses))
+
+    max_month = month[max_profit]
+    min_month = month[min_profit]
+    print(max_profit)
+    print(max_month)
+    
+
     print("Financial Analysis")
     print("----------------------------------------------------")
     print(f"Total Months: {len(month)+1}")
@@ -32,7 +41,7 @@ with open(path, 'r') as csvfile:
     print(f"Greatest Decrease in Profits: $({min(profit_losses)})")
     
     #print(CSVasList.index(max(profit_losses)))
-    #print(row[max(profit)])
+    
 
 with open('mainFinal.txt', 'w') as txtfile:
     final_results = (
