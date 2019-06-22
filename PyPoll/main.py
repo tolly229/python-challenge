@@ -28,8 +28,8 @@ with open(path,'r') as csvfile:
     l_percent= round(l/int(total)*100,2) 
     o_percent= round(o/int(total)*100,2) 
 
-    #winner = candidate.index(max(voter.count))
-    #print(winner)
+    winner = voter.index(max(voter))
+    winner_name = candidate[winner]
 
 print("Election Results")
 print("----------------------------------------------------")
@@ -40,7 +40,7 @@ print(f"Correy: {c_percent} % ({c})")
 print(f"Li: {l_percent} % ({l})")
 print(f"O'Tooley: {o_percent} % ({o})")
 print("----------------------------------------------------")
-print("Winner: ")
+print(f"Winner: {winner_name}")
 print("----------------------------------------------------")
 
 with open('mainEnd.txt', 'w') as txtfile:
@@ -54,7 +54,7 @@ with open('mainEnd.txt', 'w') as txtfile:
     f"Li: {l_percent} % ({l})\n"
     f"O'Tooley: {o_percent} % ({o})\n"
     f"----------------------------------------------------\n"
-    f"Winner: \n"
+    f"Winner: {winner_name}\n"
     f"----------------------------------------------------\n")
     txtfile.write(election_results)
 
